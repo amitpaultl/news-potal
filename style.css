@@ -1,0 +1,244 @@
+/* goole font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* common css */
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #F6F6F6;
+}
+
+/* header css start */
+
+/* nave menu */
+.logo img{
+    width: 50px;
+}
+
+ul.nav-item {
+    margin: 0;
+    padding: 0;
+}
+
+ul.nav-item li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+ul.nav-item li a {
+    padding: 11px 11px;
+    text-decoration: none;
+    color: #A3A3A3;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+ul.nav-item li a:hover {
+    color: #5D5FEF;
+}
+
+img.user-img {
+    border-radius: 50%;
+    width: 33px;
+}
+
+.hr{
+    margin: auto;
+    width: 89%;
+}
+
+/* catagorey menu */
+
+.catagorey li a{
+    padding: 30px 15px 39px!important;
+    display: inline-block;
+    color: #858585;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.catagorey li a:hover{
+    color: #5D5FEF;
+}
+
+/* slecte area */
+
+.slecte {
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 21px 18px;
+}
+.slecte h4 {
+    font-weight: 400;
+    font-size: 18px;
+    margin: 0;
+}
+
+/* short  */
+
+
+.short-view {
+    margin: 44px 0 55px;
+}
+
+.stho-text span {
+    font-weight: 400;
+    font-size: 18px;
+    margin-right: 16px;
+    background: #FFFFFF;
+}
+
+span.slect-view {
+    font-weight: 600;
+    font-size: 14px;
+    color: #ABADC6;
+    padding: 8px 15px;
+}
+
+.short-button button {
+    border-color: #5D5FEF;
+    padding: 10px 19px;
+    font-weight: 400;
+    font-size: 18px;
+    border-radius: 5px;
+    color
+: #5D5FEF;
+}
+
+button.btu {
+    background: #5D5FEF;
+    color: #fff;
+}
+
+
+
+
+
+
+/* catagore ditels */
+
+.bg-cat{
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: rgba(39, 39, 39, 0.03) 0px 10px 50px;
+}
+
+.catagare-text h2 {
+    font-weight: 700;
+    font-size: 24px;
+    color: #121221;
+}
+
+.catagare-text p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #949494;
+}
+
+.user-img img {
+    width: 40px;
+}
+
+.user-name h3 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #2B2C34;
+    margin: 0;
+}
+
+.user-name p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: capitalize;
+    color: #718797;
+    margin: 0;
+}
+
+.user-name {
+    margin-left: 13px;
+}
+
+.view-area p {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    color: #515151;
+    margin: 0;
+}
+
+.rewview i {
+    padding: 0px 6px;
+    font-size: 18px;
+}
+
+.modal-btu button {
+    border: none;
+    background: #fff;
+}
+
+.modal-btu i {
+    font-size: 20px;
+    color: #5D5FEF;;
+}
+
+.footer-area p{
+    font-weight: 700;
+    font-size: 16px;
+    color: #949494;
+    padding: 30px 0;
+    background-color: #fff;
+}
+
+
+
+/* responsive css */
+
+/* Small devices (landscape phones, less than 768px)*/
+
+@media (max-width: 767.98px){ 
+    .slecte{
+        margin-bottom: 15px;
+    }
+    .short-view{
+        display: none!important;
+    }
+
+    .catagare-text h2{
+        margin-top: 15px;
+    }
+}
+/*// Medium devices (tablets, less than 992px)*/
+
+@media  (max-width: 991.98px) { 
+    .catagare-text h2 {
+        font-size: 17px;;
+    }
+
+    .catagare-text p {
+        font-size: 14px;
+        line-height: normal; 
+    }
+
+    .feed-back{
+        display: block!important;
+        text-align: center;
+    }
+
+    .comment{
+        display: inline-block!important;
+    }
+
+    .bettn{
+        display: inline-block;
+        width: 49%;
+    }
+
+    .mt-t{
+        margin-top: 25px;
+    }
+
+ }
