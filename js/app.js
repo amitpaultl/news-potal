@@ -77,14 +77,22 @@ const singleCatagoreDispaly = (data) =>{
     const singleCatagoryId = document.getElementById('single-catagory'); // select single-catagory tag
     singleCatagoryId.innerHTML = ' '; // emty single-catagory tag befor evey lodimg
     
-    
-
     toggleSpner(false); // spninner stop
 
 
 
+        // short view 
 
-    data.forEach(element => { 
+        function compareAge(a, b) {
+
+            return b.total_view - a.total_view;
+        }
+
+        const view = data.sort(compareAge); 
+
+
+        view.forEach(element => { 
+        console.log(element);
         const {thumbnail_url, title, details, author, total_view} = element ; // Datstacher
        
         const {img, name, published_date} = author // author info
@@ -126,8 +134,9 @@ const singleCatagoreDispaly = (data) =>{
                             <i class="fa-regular fa-star"></i>
                         </div>
                         <div class="bettn mt-t modal-btu">
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="dispalymodal('${title}', '${thumbnail_url}', '${total_view}')"><i class="fa-solid fa-chevron-right"></i>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="dispalymodal('${title}', '${thumbnail_url}', '${total_view}', '${name}', '${img}')"><i class="fa-solid fa-chevron-right"></i>
                             </button>
+                            
                         </div>
                     </div>
                 </div>
@@ -137,7 +146,7 @@ const singleCatagoreDispaly = (data) =>{
         
     });
 
- 
+
     
 }
 
@@ -153,7 +162,7 @@ const toggleSpner = (isLoder)=> {
 }
 
 // modal box add
-const dispalymodal = (title, image_url, total_view ) =>{
+const dispalymodal = (title, image_url, total_view , name, img ) =>{
     
     const modalId = document.getElementById('modalid'); //modal id select
     modalId.innerHTML= `
@@ -167,8 +176,13 @@ const dispalymodal = (title, image_url, total_view ) =>{
                         <div class="text-center">
                             <img src=${image_url} alt="" srcset="">
                         </div>
-                        
-                        <p>Total View ${total_view}</p>
+                            <div class="user-img">
+                                <img src=${img} alt="">
+                            </div>
+                            <div class="user-name">
+                                <h3>${name ? name : 'No Auther Name'}</h3>
+                            </div>
+                        <span><i class="fa-solid fa-eye"></i> ${total_view}</span>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
