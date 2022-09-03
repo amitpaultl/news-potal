@@ -20,18 +20,69 @@
             <div class="container-fluid">
               <div class="logo">
                 <a class="navbar-brand">
-                    <img  src="image/news-font.webp" alt="" srcset="">
+                    <img  src="image/one-news-logo-8CDC7D058C-seeklogo.com.png" alt="" srcset="">
                   </a>
               </div>
               <ul class="nav-item">
                 <li><a href="">News</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal">Blog</a></li>
                 <img src="image/images.png" class="user-img" alt="">
               </ul>
             </div>
         </nav>
         
        <!-- modal  -->
+       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    var let const difference
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    var keyword in JavaScript: The var is the oldest keyword to declare a variable in JavaScript. Scope: Global scoped or function scoped.
+                    Javascript.  
+                  var: var	let	constIt can be declared without initialization.
+                  let: It can be declared without initialization.
+                   const: It cannot be declared without initialization.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Arrow function vs normal function
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    Since regular functions are constructible, they can be called using the new keyword. However, the arrow functions are only callable and not constructible, i.e arrow functions can never be used as constructor functions. Hence, they can never be invoked with the new keyword.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Template literals
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    Template literals are sometimes informally called template strings, because they are used most commonly for string interpolation (to create strings by doing substitution of placeholders). However, a tagged template literal may not result in a string; it can be used with a custom tag function to perform whatever operations you want on the different parts of the template literal.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
 
     <hr class="hr mt-3">  

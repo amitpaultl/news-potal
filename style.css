@@ -10,8 +10,9 @@ body{
 /* header css start */
 
 /* nave menu */
-.logo img{
-    width: 50px;
+.logo img {
+    width: auto;
+    height: 48px;
 }
 
 ul.nav-item {
