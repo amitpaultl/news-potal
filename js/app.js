@@ -20,7 +20,7 @@ const dispalyCatagorey = (data) =>{
         li.classList.add('nav-item');
         li.innerHTML = `
             <li>
-                <a class="nav-link " aria-current="page" onclick="singleCatagore(${element.category_id})">${element.category_name}</a>
+                <a class="nav-link " aria-current="page" onclick="singleCatagore(${element.category_id}, toggleSpner(${true}))">${element.category_name}</a>
             </li>
         `
         catagoreyMenu.appendChild(li);
@@ -106,8 +106,20 @@ const singleCatagoreDispaly = (data) =>{
         `
         
         singleCatagoryId.appendChild(div);
+        
     });
+    toggleSpner(false);
+}
 
+// spner
+
+const toggleSpner = (isLoder)=> {
+    const spnerId = document.getElementById('spniner');
+    if(isLoder){
+        spnerId.classList.remove('d-none')
+    }else{
+        spnerId.classList.add('d-none')
+    }
 }
 
 const dispalymodal = (details) =>{
