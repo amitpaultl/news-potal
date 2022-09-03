@@ -55,6 +55,7 @@ img.user-img {
     color: #858585;
     font-weight: 400;
     font-size: 18px;
+    cursor: pointer;
 }
 
 .catagorey li a:hover{
