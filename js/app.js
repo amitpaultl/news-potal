@@ -63,6 +63,8 @@ const singleCatagore = (categoryId)=> {
 // singleCatagore Dispaly
 
 const singleCatagoreDispaly = (data) =>{
+
+    
     const total = document.getElementById('slecte'); // slecte tag 
     const totalNumber = data.length 
     if (totalNumber != 0) { // check all item 
@@ -74,10 +76,17 @@ const singleCatagoreDispaly = (data) =>{
  
     const singleCatagoryId = document.getElementById('single-catagory'); // select single-catagory tag
     singleCatagoryId.innerHTML = ' '; // emty single-catagory tag befor evey lodimg
+    
+    
+
+    toggleSpner(false); // spninner stop
+
+
+
 
     data.forEach(element => { 
         console.log(element);
-        const {thumbnail_url, title, details,author,total_view} = element ; // Datstacher
+        const {thumbnail_url, title, details, author, total_view} = element ; // Datstacher
        
         const {img, name, published_date} = author // author info
 
@@ -118,7 +127,7 @@ const singleCatagoreDispaly = (data) =>{
                             <i class="fa-regular fa-star"></i>
                         </div>
                         <div class="bettn mt-t modal-btu">
-                            <button onclick="dispalymodal('${title}')"><i class="fa-solid fa-chevron-right"></i>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="dispalymodal('${title}', '${thumbnail_url}', '${total_view}')"><i class="fa-solid fa-chevron-right"></i>
                             </button>
                         </div>
                     </div>
@@ -128,7 +137,9 @@ const singleCatagoreDispaly = (data) =>{
         singleCatagoryId.appendChild(div); // apped into singleCatagoryId tage
         
     });
-    toggleSpner(false); // spninner stop
+
+ 
+    
 }
 
 // spner
@@ -142,10 +153,37 @@ const toggleSpner = (isLoder)=> {
     }
 }
 
-const dispalymodal = (details) =>{
-    console.log(details);
+const dispalymodal = (title, image_url, total_view ) =>{
+    console.log(title, image_url, total_view);
+    
+    const modalId = document.getElementById('modalid');
+    modalId.innerHTML= `
+                <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="staticBackdropLabel">Modal</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h3>${title}</h3>
+                        <div class="text-center">
+                            <img src=${image_url} alt="" srcset="">
+                        </div>
+                        
+                        <p>Total View ${total_view}</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Understood</button>
+                    </div>
+                </div>
+    `
 }
 
 
 
 catagoreyUrl();
+
+
+
+
+
