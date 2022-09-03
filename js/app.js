@@ -2,28 +2,38 @@
 // categories url
 
 const catagoreyUrl = () =>{
-    const  url = `https://openapi.programming-hero.com/api/news/categories`
-    fetch(url)
-    .then(res => res.json())
-    .then(data => dispalyCatagorey(data.data.news_category))
+    
+
+   
+ // try catch use
+    try{
+        const  url = `https://openapi.programming-hero.com/api/news/categories`
+        fetch(url)
+        .then(res => res.json())
+        .then(data => dispalyCatagorey(data.data.news_category)) //retun dispalyCatagorey
+
+    }
+    catch(error){
+        console.log(error);
+    }
 }
 
 // categories dispaly
 
 const dispalyCatagorey = (data) =>{
-    const catagoreyMenu = document.getElementById('catagorery-menu');
+    const catagoreyMenu = document.getElementById('catagorery-menu'); //cotagory menu prent tag
   
 
     data.forEach(element => {
         
-        const li = document.createElement('li');
-        li.classList.add('nav-item');
+        const li = document.createElement('li'); //cotagory menu li tag creat 
+        li.classList.add('nav-item'); //cotagory menu li tag add class 
         li.innerHTML = `
             <li>
-                <a class="nav-link " aria-current="page" onclick="singleCatagore(${element.category_id}, toggleSpner(${true}))">${element.category_name}</a>
+                <a class="nav-link " aria-current="page" onclick="singleCatagore(${element.category_id}, toggleSpner(${true}))">${element.category_name}</a> 
             </li>
         `
-        catagoreyMenu.appendChild(li);
+        catagoreyMenu.appendChild(li); //catagorey in append li tag
     });
 
 }
@@ -32,10 +42,20 @@ const dispalyCatagorey = (data) =>{
 
 const singleCatagore = (categoryId)=> {
     
-    const singleCatagoreUrl = `https://openapi.programming-hero.com/api/news/category/0${categoryId}`;
-    fetch(singleCatagoreUrl)
-    .then(res => res.json())
-    .then(data => singleCatagoreDispaly(data.data))
+    const singleCatagoreUrl = `https://openapi.programming-hero.com/api/news/category/0${categoryId}`; // single catagorey url
+
+    // try catch use
+
+    try{
+        fetch(singleCatagoreUrl)
+        .then(res => res.json())
+        .then(data => singleCatagoreDispaly(data.data))
+       
+    }
+    catch(error){
+        console.log(error);
+    };
+
    
     
 }
@@ -43,32 +63,32 @@ const singleCatagore = (categoryId)=> {
 // singleCatagore Dispaly
 
 const singleCatagoreDispaly = (data) =>{
-    const total = document.getElementById('slecte');
-    const totalNumber = data.length
-    if (totalNumber != 0) {
-        total.innerText= totalNumber + ' Total News'
+    const total = document.getElementById('slecte'); // slecte tag 
+    const totalNumber = data.length 
+    if (totalNumber != 0) { // check all item 
+        total.innerText= totalNumber + ' Total News' // set total item
     }else{
-        total.innerText = ' Not found Data'
+        total.innerText = ' Not found Data' //no data massese
     }
 
  
-    const singleCatagoryId = document.getElementById('single-catagory');
-    singleCatagoryId.innerHTML = ' ';
+    const singleCatagoryId = document.getElementById('single-catagory'); // select single-catagory tag
+    singleCatagoryId.innerHTML = ' '; // emty single-catagory tag befor evey lodimg
 
-    data.forEach(element => {
+    data.forEach(element => { 
         console.log(element);
-        const {thumbnail_url, title, details,author,total_view} = element
+        const {thumbnail_url, title, details,author,total_view} = element ; // Datstacher
        
-        const {img, name, published_date} = author
+        const {img, name, published_date} = author // author info
 
    
 
-        const div = document.createElement('div');
-        div.classList.add('row', 'bg-cat', 'align-items-center','mb-4');
+        const div = document.createElement('div'); // creat tag 
+        div.classList.add('row', 'bg-cat', 'align-items-center','mb-4'); //add class list
         div.innerHTML = `
                 <div class="col-xl-3 col-lg-6 col-md-6 ">
                     <div class="image text-center">
-                        <img src=${thumbnail_url} class="w-100" alt="">
+                        <img src=${thumbnail_url} class="w-100" alt=""> 
                     </div>
                 </div>
                 <div class="col-xl-9 col-lg-6 col-md-6 ">
@@ -105,20 +125,20 @@ const singleCatagoreDispaly = (data) =>{
                 </div>
         `
         
-        singleCatagoryId.appendChild(div);
+        singleCatagoryId.appendChild(div); // apped into singleCatagoryId tage
         
     });
-    toggleSpner(false);
+    toggleSpner(false); // spninner stop
 }
 
 // spner
 
 const toggleSpner = (isLoder)=> {
-    const spnerId = document.getElementById('spniner');
+    const spnerId = document.getElementById('spniner'); // secletor spniner tag
     if(isLoder){
-        spnerId.classList.remove('d-none')
+        spnerId.classList.remove('d-none') //spniner add 
     }else{
-        spnerId.classList.add('d-none')
+        spnerId.classList.add('d-none') //spniner none
     }
 }
 
