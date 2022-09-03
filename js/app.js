@@ -85,7 +85,6 @@ const singleCatagoreDispaly = (data) =>{
 
 
     data.forEach(element => { 
-        console.log(element);
         const {thumbnail_url, title, details, author, total_view} = element ; // Datstacher
        
         const {img, name, published_date} = author // author info
@@ -153,10 +152,10 @@ const toggleSpner = (isLoder)=> {
     }
 }
 
+// modal box add
 const dispalymodal = (title, image_url, total_view ) =>{
-    console.log(title, image_url, total_view);
     
-    const modalId = document.getElementById('modalid');
+    const modalId = document.getElementById('modalid'); //modal id select
     modalId.innerHTML= `
                 <div class="modal-content">
                     <div class="modal-header">
