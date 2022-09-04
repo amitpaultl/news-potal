@@ -172,21 +172,22 @@ const dispalymodal = (title, image_url, total_view , name, img ) =>{
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <h3>${title}</h3>
+                        
                         <div class="text-center">
                             <img src=${image_url} alt="" srcset="">
                         </div>
-                            <div class="user-img">
-                                <img src=${img} alt="">
-                            </div>
-                            <div class="user-name">
-                                <h3>${name ? name : 'No Auther Name'}</h3>
-                            </div>
+                        <h3>${title}</h3>
+                        <div class="user-img">
+                            <img src=${img} alt="">
+                        </div>
+                        <div class="user-name">
+                            <h3>Auther Name :${name ? name : 'No Auther Name'}</h3>
+                        </div>
                         <span><i class="fa-solid fa-eye"></i> ${total_view}</span>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Understood</button>
+                      
                     </div>
                 </div>
     `
